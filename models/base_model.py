@@ -6,7 +6,7 @@ import uuid
 from datetime import datetime
 
 
-Class BaseModel:
+class BaseModel:
     """
     defines all common attributes/methods for other classes
     """
@@ -21,7 +21,7 @@ Class BaseModel:
     def __str__(self):
         """Instance string format"""
         temp = "[{}] {} {}"
-        return .format(self.__class__.__name__, self.id, self.__dict__)
+        return temp.format(self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
         """updates the attribute updated_at with the current datetime"""
@@ -31,4 +31,9 @@ Class BaseModel:
         """
         returns a dict containing all keys/values of __dict__ of the instance
         """
+        new_dict = self.__dict__.copy()
+        new_dict.update({'__class__': str(self.__class__.__name__)})
+        new_dict['created_at'] = self.created_at.isoformat()
+        new_dict['updated_at'] = self.updated_at.isoformat()
+        return new_dict
         
