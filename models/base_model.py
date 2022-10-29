@@ -18,7 +18,7 @@ class BaseModel:
             id (str)
             created_at (datetime obj)
             updated_at (datetime obj)
-            kwargs: key/value pairs 
+            kwargs: key/value pairs
         """
         if kwargs:
             for key, value in kwargs.items():
