@@ -24,10 +24,10 @@
 	margin-top: 0;
 }
 .articles{
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
+	display: inline-flex;
+	align-items: stretch;
 	justify-content: center;
+	flex-wrap: wrap;
 }
 article .price_by_night{
 	color: #ff5a5f;
@@ -72,7 +72,7 @@ article .price_by_night p{
 	justify-content: center;
 	align-items: flex-end;
 }
-.information p{  
+.information p{
 	line-height: .1;
 }
 article .user span{
